@@ -1,0 +1,234 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+:root {
+  --bg-color: #0E191A;
+  --font-color: #D4D4D4;
+  --background-rgb: 29 30 34;
+  --green-rgb: 9 196 84;
+  --primary-rgb: var(--green-rgb);
+
+}
+
+body {
+  background: cover;
+  background-color: var(--bg-color);
+  min-height: 100vh;
+  max-height: 100%;
+}
+
+/* Background stripes animation */
+
+.screen {
+  max-width: auto;
+  height: 100%;
+  border: 3px solid rgb(var(--primary-rgb) / 80%);
+  background-color: rgb(var(--primary-rgb) / 15%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+  background: var(--bg-color); 
+  
+
+}
+
+@keyframes pan-overlay {
+  from {
+    background-position: 0% 0%;
+  }
+  
+  to {
+    background-position: 0% -100%;
+  }
+}
+
+.screen-overlay {
+  background: repeating-linear-gradient(
+      rgb(var(--primary-rgb) / 15%),
+      rgb(var(--primary-rgb) / 15%) 3px,
+      transparent 3px,
+      transparent 9px
+  );
+  background-size: 100% 9px;
+  height: 166rem;
+  width: 100%;
+  animation: pan-overlay 22s infinite linear;
+
+  z-index: 2;
+  left: 0px;
+  top: 0px;
+
+
+}
+
+/* Background dynamic image animation */
+
+@keyframes pan-image {  
+  0% { /* View 1 */
+    background-position: 36% 42%;
+    background-size: 200%;
+  }
+  
+  20% {
+    background-position: 30% 35%;
+    background-size: 200%;
+  }
+  
+  20.0001% { /* View 2 */
+    background-position: 60% 85%;
+    background-size: 500%;
+  }
+  
+  40% {
+    background-position: 49% 81%;
+    background-size: 500%;
+  }
+  
+  40.0001% { /* View 3 */
+    background-position: 80% 42%;
+    background-size: 300%;
+  }
+  
+  60% {
+    background-position: 84% 33%;
+    background-size: 300%;
+  }
+  
+  60.0001% { /* View 4 */
+    background-position: 0% 0%;
+    background-size: 300%;
+  }
+  
+  80% {
+    background-position: 15% 4%;
+    background-size: 300%;
+  }
+  
+  80.0001% { /* View 5 */
+    background-position: 80% 10%;
+    background-size: 300%;
+  }
+  
+  100% {
+    background-position: 72% 14%;
+    background-size: 300%;
+  }
+
+}
+
+.screen > .screen-image {
+  background-image: url("https://steamsplay.com/wp-content/uploads/2021/08/Deep-Rock-Galactic-Beginners-Guide-and-Basic-Information-Choosing-Class-Exploring-steamsplay-com.jpg");
+  height: 166rem;
+  width: 99.65%;
+  position: absolute;
+  z-index: 1;
+  background-size: 300%;
+  background-position: 0% 0%;
+  filter: sepia(100%) hue-rotate(90deg);
+  opacity: 0.2;
+  animation: pan-image 15s linear infinite;
+}
+
+/* Game logo */
+
+html { height: 100%; }
+
+.top {
+  padding: 25px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+ 
+}
+
+.logo {
+  
+  height: 900px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* Wiki section titles */
+
+h2 {
+  color: var(--font-color);
+  padding: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Wiki section images*/
+
+.dwarves ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.equipment ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.creatures {
+  padding: 30px;
+}
+
+.creatures ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* Images hover animation */
+
+.dwarves ul a{
+  transition: all.55s ease;
+}
+
+.equipment ul a{
+  transition: all.55s ease;
+}
+
+.creatures ul a{
+  transition: all.55s ease;
+}
+
+.dwarves ul a:hover {
+ transform: translateY(-20px);
+}
+
+.equipment ul a:hover {
+  transform: translateY(-18px);
+}
+
+
+
+.creatures ul a:hover {
+  transform: translateY(-16px);
+}
+
+/* Footer */
+
+h4 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  
+  color: var(--font-color);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.developer {
+  text-decoration: none;
+}
